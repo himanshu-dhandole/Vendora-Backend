@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class SellerReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

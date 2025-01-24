@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class PaymentOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class PaymentOrder {
     private String paymentLinkId;
 
     @ManyToOne
-    private User user;
+    private Users users;
 
     @OneToMany
     private List<Order> order = new ArrayList<>();

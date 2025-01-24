@@ -13,10 +13,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id ;
 
     @ManyToOne
     private Category category;
@@ -32,7 +32,7 @@ public class Product {
 
     private double rating ;
     private LocalDateTime createdAt ;
-    private long id;
+
     private String title;
     private String description;
     private BigDecimal sellingprice;

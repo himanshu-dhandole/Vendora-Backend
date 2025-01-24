@@ -20,14 +20,14 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@Table(name = "order_table")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String orderId;
     @ManyToOne
-    private User user ;
+    private Users user ;
     private Long sellerId ;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -43,8 +43,8 @@ public class Order {
     private BigDecimal mrpPrice;
     private double discount ;
     private int quantity ;
-    private OrderStatus status = OrderStatus.PENDING ;
-    private PaymentStatus paymentStatus = PaymentStatus.PENDING ;
+    private OrderStatus orderStatus  ;
+    private PaymentStatus paymentStatus  ;
 
     private LocalDateTime orderdate = LocalDateTime.now();
     private LocalDateTime deleveryDate = orderdate.plusDays(7);

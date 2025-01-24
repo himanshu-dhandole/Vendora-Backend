@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

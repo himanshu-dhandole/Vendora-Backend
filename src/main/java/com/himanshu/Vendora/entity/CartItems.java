@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class CartItems {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

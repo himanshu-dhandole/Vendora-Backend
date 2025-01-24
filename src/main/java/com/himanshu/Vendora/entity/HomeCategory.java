@@ -11,7 +11,6 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class HomeCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

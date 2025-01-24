@@ -1,7 +1,6 @@
 package com.himanshu.Vendora.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -13,7 +12,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,12 +30,10 @@ public class Review {
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now()  ;
 
-    @NotNull
     @ManyToOne
-    private User user ;
+    private Users users;
 
     @ManyToOne
-    @NotNull
     @JsonIgnore
     private Product product ;
 }

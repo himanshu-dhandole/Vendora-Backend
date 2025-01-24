@@ -20,7 +20,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

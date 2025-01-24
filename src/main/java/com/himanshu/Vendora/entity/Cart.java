@@ -12,7 +12,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Cart {
 
     @Id
@@ -20,7 +19,7 @@ public class Cart {
     private long id;
 
     @ManyToOne
-    private User user;
+    private Users users;
 
     @OneToMany(mappedBy = "cart" , cascade = CascadeType.ALL , orphanRemoval = true)
     private List<CartItems> cartItems = new ArrayList<>();

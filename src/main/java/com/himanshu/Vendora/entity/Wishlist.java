@@ -3,7 +3,6 @@ package com.himanshu.Vendora.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,15 +10,15 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class Wishlist {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @OneToOne
-    private User user ;
+    private Users users;
 
     @ManyToMany
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products ;
 }

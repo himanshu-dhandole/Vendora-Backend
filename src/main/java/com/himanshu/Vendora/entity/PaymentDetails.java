@@ -1,6 +1,7 @@
 package com.himanshu.Vendora.entity;
 
 import com.himanshu.Vendora.Enums.PaymentStatus;
+import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Data

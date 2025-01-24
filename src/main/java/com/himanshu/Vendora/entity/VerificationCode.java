@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+
 public class VerificationCode {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +16,7 @@ public class VerificationCode {
     private String email ;
 
     @OneToOne
-    private User user ;
+    private Users users;
 
     @OneToOne
     private Seller seller ;

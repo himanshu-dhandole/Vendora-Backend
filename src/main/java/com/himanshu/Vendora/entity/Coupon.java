@@ -13,7 +13,6 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,5 +25,5 @@ public class Coupon {
     private Double minOrderAmount;
     private Boolean active;
     @ManyToMany(mappedBy = "usedCoupons")
-    private List<User> usedByUsers = new ArrayList<>();
+    private List<Users> usedByUsers = new ArrayList<>();
 }

@@ -1,5 +1,5 @@
 package com.himanshu.Vendora.entity;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.himanshu.Vendora.Enums.AccountStatus;
 import com.himanshu.Vendora.Enums.OrderStatus;
 import com.himanshu.Vendora.Enums.PaymentStatus;
@@ -21,31 +21,21 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Order {
+public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String orderId;
-    @ManyToOne
-    private User user ;
-    private Long sellerId ;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @JsonIgnore
+    @ManyToOne
+    private Order order;
 
     @ManyToOne
-    private Address shippingAdderss ;
+    private Product product;
 
-    @Embedded
-    private PaymentDetails paymentDetails = new PaymentDetails() ;
-
-    private BigDecimal totalSellingPrice;
+    private int quantity;
+    private BigDecimal sellingPrice;
     private BigDecimal mrpPrice;
-    private double discount ;
-    private int quantity ;
-    private OrderStatus status = OrderStatus.PENDING ;
-    private PaymentStatus paymentStatus = PaymentStatus.PENDING ;
-
-    private LocalDateTime orderdate = LocalDateTime.now();
-    private LocalDateTime deleveryDate = orderdate.plusDays(7);
+    private String size ;
+    private Long userId ;
 }

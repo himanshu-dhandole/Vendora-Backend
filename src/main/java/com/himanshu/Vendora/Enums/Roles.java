@@ -1,4 +1,4 @@
-package com.himanshu.Vendora;
+package com.himanshu.Vendora.Enums;
 
 public enum Roles {
     ADMIN,

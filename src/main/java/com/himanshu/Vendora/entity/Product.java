@@ -1,6 +1,5 @@
-package com.himanshu.Vendora.models;
+package com.himanshu.Vendora.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 

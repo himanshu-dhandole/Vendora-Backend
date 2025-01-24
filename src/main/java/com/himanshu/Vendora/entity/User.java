@@ -1,8 +1,8 @@
-package com.himanshu.Vendora.models;
+package com.himanshu.Vendora.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.himanshu.Vendora.Roles;
+import com.himanshu.Vendora.Enums.Roles;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

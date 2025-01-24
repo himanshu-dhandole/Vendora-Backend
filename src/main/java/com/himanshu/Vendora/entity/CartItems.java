@@ -1,11 +1,9 @@
-package com.himanshu.Vendora.models;
+package com.himanshu.Vendora.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -22,7 +20,10 @@ public class CartItems {
     @JsonIgnore
     private Cart cart ;
 
+    @ManyToOne
+    @JsonIgnore
     private Product product ;
+
     private int quantity=1 ;
     private BigDecimal sellingPrice ;
     private BigDecimal mrpPrice ;

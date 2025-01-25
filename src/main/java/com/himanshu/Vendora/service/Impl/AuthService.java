@@ -11,6 +11,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+
 @RequiredArgsConstructor
 @Service
 public class AuthService {
@@ -20,6 +22,8 @@ public class AuthService {
     private final UsersRepo usersRepo;
 
     private final AuthenticationManager authManager;
+
+    private final JwtService jwtService ;
 
     public Users signup(UsersDTO usersDTO) {
         Users user = new Users();
@@ -33,7 +37,7 @@ public class AuthService {
         try{
             Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(usersDTO.getName(),usersDTO.getPassword()));
             if (authentication.isAuthenticated()){
-                return "user authenticated" ;
+                return jwtService.generateToken(usersDTO.getName());
             }
         } catch (Exception e) {
             return "user not authenticated" ;

@@ -7,6 +7,5 @@ import lombok.*;
 public class UsersDTO {
     private String name;
     private String email;
-    @JsonIgnore
     private String password;
 }

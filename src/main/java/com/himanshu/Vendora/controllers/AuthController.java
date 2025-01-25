@@ -21,4 +21,10 @@ public class AuthController {
         Users user = authService.signup(usersDTO);
         return ResponseEntity.ok(user);
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody UsersDTO usersDTO){
+        String user =authService.verifyLogin(usersDTO) ;
+        return ResponseEntity.ok(user) ;
+    }
 }
